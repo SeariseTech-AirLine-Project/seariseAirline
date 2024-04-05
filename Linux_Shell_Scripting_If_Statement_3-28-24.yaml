@@ -1,0 +1,792 @@
+Linux Networking Commands:
+ping  
+dig 
+ifconfig
+ip add show
+netstat
+ps -ef 
+telnet 
+nmap localhost or the hostname
+yum install bind-utils installs nslookup dig
+nslookup
+route -n
+tracert
+arp 
+mtr
+
+protocols        ports/address    
+   ssh              22  
+   http             80  
+   https            443  
+   nfs              2089  
+   rdp              3089 
+   smtp            25/465/587   
+   tomcat           8080  
+   jenkins          8080 
+   dns              50
+   telnet           32
+   pop              
+   imap
+   smtp
+
+  DevOps/Cloud/Application Engineering
+Platform/Kubernetes/Application Engineering
+============================================
+
+GUI = 
+CLI
+SCRIPTING 
+
+
+Automating IT processes/workloads with GUI/CLI and Scripting
+=============================================================
+Automating IT:
+   processes
+   workloads 
+   jobs    
+   tasks  
+   Examples of workloads:
+  fileMGT / userMGT / packageMGT/ securityMGT / systemMGT / etc
+
+  Workload management on Computer systems [LINUX OS] :
+    GUI: = Graphical user interface  -- 5%
+    CLI: = command line interface    -- 
+
+  scripts: a shell script is a file containing a series of commands  
+
+  shell: A shell is an interpreter that interpretes commands to the OS.
+
+       LionuxOS        WindowOS            MacOS
+Shell:   bash/sh       powerShell          bash/zshell
+
+Command:  ls            ls                  ls 
+
+Shells commmand interpreters:
+
+	Boune shell   (sh)
+    Boune Again Shell (bash)
+    csh / ksh/ tcsh / zsh 
+
+ cat /etc/shells = List all current Shells in your system
+ /bin/sh
+/bin/bash
+/usr/bin/sh
+/usr/bin/bash
+
+echo $SHELL = List your current Shells
+
+/bin/sh
+/bin/bash
+/usr/bin/sh
+/usr/bin/bash
+/usr/bin/zsh
+/bin/zsh
+/bin/ksh
+/bin/rksh
+/usr/bin/ksh
+/usr/bin/rksh
+/bin/csh
+/bin/tcsh
+/usr/bin/csh
+/usr/bin/tcsh
+
+sudo yum install -y csh ksh zsh
+
+GUI with minimum Automation  - 5%    
+Commands with Automation     - 40% 
+scripts with more Automation - 80%
+
+Bash shell Scripting:
+
+Naming convention:
+Naming conventions best practices:
+bash Shell-scripts  = script.sh or hello.sc  
+Shell-scripts has '.sc' or '.sh' extensions 
+
+ls  
+  deploy.sh  = Shell-script [*.sh]
+  test.txt   = text file    [*.txt]
+  app.sc     = Shell-script [*.sc]
+  app.java   = java code    [*.java] 
+  monitor.py = python code/script [*.py] 
+  app.yaml   = playbook or manifest file [*.yml] 
+  main.tf    = terraform scripts/codes [*.tf]
+
+  upgrade.sh 
+  updates.sc 
+
+  firstscrip.sh 
+  The script should always start with sheband
+  #!/bin/bash
+echo "Good Evening Students"
+whoami
+echo "Welcome to Searise Technologies Solutions"
+echo "Today is"
+date
+
+To run a script, the script need executable permission to run
+
+-rw-r--r--. 1 calvin calvin 164 Mar  6 21:02 firstscript.sh:
+	chmod +X fileName
+	chmod +X firstscript
+-rwxr-xr-x. 1 calvin calvin 164 Mar  6 21:02 firstscript.sh:
+
+#!/bin/bash
+echo "This script monitor system resource"
+echo
+
+echo "The system uptime is"
+uptime
+echo
+
+echo " system memory utilization"
+free -m
+echo
+
+echo "system disk utilization"
+df -h
+
+Scripting or automation langauges :
+  1. Bash Shell Scripting
+  2. Python 
+  3. Groovy  (Jenkins)
+  3. Ruby
+  4. Yaml  
+      (k8s, Ansible, CloudFormation)
+  5. JSon 
+  6. HCL - Terraform  
+  7. XML = 
+  8. html 
+  9. go/golang 
+  10. powershell 
+
+deploy.sh 
+#!/bin/bash
+echo "Walmart projects is ready for the market"
+echo "Deployment Start"
+mkdir deployment
+touch deployment/app.java # This will create a file in his
+chmod 744 deployment/app.java
+sudo chown calvin:walmart deployment/app.java
+mkdir app 
+cp deployment/app.java app 
+echo "Deployment Successful"
+whoami
+echo "Walmart projects is completed and deploy successfully"
+
+How to make my code/script readable:
+  Easily readable and understanding 
+  By adding Note, Comments, Explanations-Note
+
+
+single line comments:
+commend.sh
+  #!/bin/bah
+  echo "Single line comments started"
+  # This script welcome all Engineers to SeariseTech.
+  # Only run this script on Linux Machine and you can only this script if you are an Engineer
+  # Author: Calvin
+  # Date: 03/07/2024
+   sudo yum -y update | tee updatefile
+   date 
+   echo "single line comments ends "
+
+yum install git | tee git.txt 
+yum install git > git
+yum install git >> git
+yum install -y git >> /tmp/git
+
+=====================================================================:
+#!/bin/bash
+# Installing Dependencies
+echo "#####################################################################"
+echo "Installing packages"
+echo "####################################################################"
+sudo yum install wget unzip httpd -y
+echo
+
+#Start & Enable Service
+echo "####################################################################"
+echo "Start & Enable HTTPD Service"
+echo "################################################################"
+sudo systemctl start httpd
+sudo systemctl enable httpd
+echo
+
+# Creating Temp Directory
+echo "#####################################################################"
+echo "Starting Artifact Deployment"
+echo "###################################################################"
+sudo mkdir -p /tmp/webfile
+sudo cd /tmp/webfile
+echo
+
+sudo wget https://www.tooplate.com/zip-templates/2098_health.zip
+sudo unzip 2098_health.zip
+sudo cp -r 2098_health.zip/* /var/www/html
+echo
+
+# Bounce Service
+echo "#########################################################"
+echo "Restarting HTTPD Service"
+echo "#################################################################"
+sudo systemctl restart httpd
+echo
+
+# Clean UP
+echo "#########################################################################"
+echo "Removing Temporary File"
+#!/bin/bash
+# Installing Dependencies
+echo "#####################################################################"
+echo "Installing packages"
+echo "####################################################################"
+sudo yum install wget unzip httpd -y
+echo
+
+#Start & Enable Service
+echo "####################################################################"
+echo "Start & Enable HTTPD Service"
+echo "################################################################"
+sudo systemctl start httpd
+sudo systemctl enable httpd
+echo
+
+# Creating Temp Directory
+echo "#####################################################################"
+echo "Starting Artifact Deployment"
+echo "###################################################################"
+sudo mkdir -p /tmp/webfile
+sudo cd /tmp/webfile
+echo
+
+sudo wget https://www.tooplate.com/zip-templates/2098_health.zip
+sudo unzip 2098_health.zip
+sudo cp -r 2098_health.zip/* /var/www/html
+echo
+
+# Bounce Service
+echo "#########################################################"
+echo "Restarting HTTPD Service"
+echo "#################################################################"
+sudo systemctl restart httpd
+echo
+
+# Clean UP
+echo "#########################################################################"
+echo "Removing Temporary File"
+
+
+
+Multi-line comments:
+
+  Syntax:
+    <<comments
+
+    comments
+
+comment2.sh 
+ #!/bin/bash
+ echo "Multi-line comments start"
+ <<calvin
+ This script Welcome DevOps Engineers to SeariseTech Event
+ If you are not a SeariseTech member please don't show at the event
+ event date and time will communicated to all members later on.
+ calvin
+ echo "Multi-line comments ends"
+ date 
+ pwd
+ whoami
+ id calvin
+
+Use cases for comments  
+ Multi-line     single-line
+      5%         95% 
+
+single line comments = 99%: 
+multi line comments  = 1% :
+
+sing variables in scripting:
+============================
+How to call a variables in bash scripting:
+
+[calvin@devopsdemo automations]$ name=Peter
+[calvin@devopsdemo automations]$ title=DevOps
+[calvin@devopsdemo automations]$ company=SeariseTech
+[calvin@devopsdemo automations]$ echo "THere is a guy call $name a $title at $company they just hired him last week"                             THere is a guy call Peter a DevOps at SeariseTech they just hired him last week
+
+  $variableName
+  ${variableName}
+
+  var1.sh
+#!/bin/bash  
+name=Yinka  
+cpy=SearisTech
+echo "Good Morning $name"
+echo "Good Morning ${name}"
+echo "Welcome to $cpy"
+echo "Welcome to ${cpy}"
+
+variables:
+variables are defined by the either the user or the system 
+we can refer/call a variable with $variable 
+
+User defined variables   = UDV:
+System defined variavles = SDV:  
+ export HISTSIZE=2000
+
+
+TERM=xterm
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+USER=calvin
+SHLVL=1
+which_declare=declare -f
+PATH=/home/calvin/.local/bin:/home/calvin/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+MAIL=/var/spool/mail/calvin
+BASH_FUNC_which%%=() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+_=/usr/bin/env
+
+[calvin@devopsdemo ~]$ ls -al
+total 28
+drwx------.  3 calvin calvin  114 Mar  6 21:00 .
+drwxr-xr-x. 20 root   root   4096 Mar  2 13:14 ..
+drwxr-xr-x.  5 calvin calvin 4096 Mar  9 12:01 automations
+-rw-------.  1 calvin calvin  847 Mar  9 12:13 .bash_history
+-rw-r--r--.  1 calvin calvin   18 Nov 24  2022 .bash_logout
+-rw-r--r--.  1 calvin calvin  141 Nov 24  2022 .bash_profile
+-rw-r--r--.  1 calvin calvin  492 Nov 24  2022 .bashrc
+-rw-r--r--.  1 calvin calvin   39 Mar  2 13:01 test
+
+vi .bashrc
+
+export HISTSIZE=2000
+
+source .bashrc
+
+export class=DevOpsMasterClass
+
+echo "I am a student of $class"
+echo "$class ends today by 1:30 pm EST"
+
+var3.sh
+#!/bin/bash
+name=Calvin
+city=Landover
+cpy=SearisTech
+cit=Largo
+echo "My name is $name"
+echo "I lived at $city"
+echo "I work with $cpy located at $cit Maryland USA"
+
+#!/bin/bash
+# This script will authenticate bank users
+# You must have the right credentials to use this script
+echo "Good Morning"
+echo "Please enter your name"
+read name  
+echo "$name, Welcome to BankOfAmerica"
+echo "Please enter your card" 
+sleep 10
+echo "Please enter you pin" 
+read pin 
+echo "You are authenticated."
+echo "Thank for banking with Us"
+
+=================================:
+As a DevOps Engineer I work with my team to:
+  1, Deploy
+  2, Test
+  3, Build
+  4, Review, qualify {codquality}
+  5, Back + Secure
+  6, Maintain
+  7, Manage and Monitor
+  Software and applications using computerized automation Technologies
+
+Write a script to create user dynamically:
+  #!/bin/bash
+    #This script will create user dynamically
+    #This script requires root/sudo access to run
+    sudo useradd chidi
+    groupadd DevOps 
+    sudo usermod -aG DevOps chidi
+    id chidi
+
+
+When we ran our script without sudo previlege and we got the error below
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+usermod: user 'chidi' does not exist
+id: ‘chidi’: no such user
+
+#!/bin/bash
+#This script will create user dynamically
+#This script requires root/sudo access to run
+echo "Please enter your name"
+read username
+echo "Creating account for $username"
+sudo useradd $username
+echo "assign Password to $username"
+sudo passwd $username
+sudo tail -2 /etc/passwd # this file contains users details
+sudo tail -2 /etc/shadow # this file contains users password
+id $username
+sudo grep $username /etc/passwd 
+
+modify the above script by adding a group entry {App}, :
+Add the user to App group and also add the user to sudoer group:
+
+Passing secret in variable:
+    access.sh
+    #!/bin/bash
+    # This script will authenticate bank user
+    echo "Good Afternoon"
+    echo "Please enter your name"
+    read name 
+    echo "$name, Welcome to TD Bank"
+    echo "Please enter your card
+    sleep 10
+    echo "Please enter your pin"
+    read -s pin  # -s pass a secret variable
+    echo "You are authenticated."
+    echo "Thanks for banking with TD Bank" 
+=====================================================:
+
+Command Line Arguments = CLA :
+==========================================
+
+#!/bin/bash
+# This script will backup data bases in all the environments
+# Please specify the environment as an argument
+# Please specify the server and your detaills as an arguments
+# dbserver1 dbserver2 dbserver3 dbserver4
+# Martins, Calvin, CJ, Iyanu
+
+# sh_backup dev dbserver1 Martins
+# sh db_backup.sh
+# sh script.sh arg1 arg2 arg3 ..... arg10
+       $0       $1   $2   $3         $10
+echo "Please pass 3 arguments with your script "
+echo "The 1st argument is $1"
+echo "The 2nd argument is $2"
+echo "The 3rd argument is $3"
+echo "The 4th argument is $4"
+echo "The 5th argument is ${10}"
+echo "The nuimber argument is $#"
+echo "The list of argument are $@"
+echo "The list of argument are $*"
+uptime
+ date
+ echo "The status of your last run command is $?"
+mkdir -p /tmp/Automation_Backup
+cp -R * /tmp/Automation_Backup
+echo The proccess id is $$
+
+CLA = $? diplays the status of your last run command  
+$? = 0 Command run successfully
+$? = 1-127 = Somethind is wrong 
+
+What is important of $? in shell scripting 
+
+1-127 = This error codes
+1 
+2
+3
+4
+5
+127
+
+
+expr 4 + 2 # 6
+expr 4 - 2 # 2
+expr 4 / 2 # 2
+expr 4 \* 2 # 8
+expr 4 % 2 # If you divided A by B what is the reminder = 0
+expr 9 % 5 # 11111 1111
+expr 9 % 4 # 1111=4 1111=4 1=1
+
+# Run this script with 2 interger as an arguments
+ # sh sao.sh 50 10
+ # sh sao2.sh arg1 arg2
+ echo The sum is `expr $1 + $2`
+ echo The product is `expr $1 \* $2`
+ echo The difference is `expr $1 - $2`
+
+
+
+Sales Revenues:
+===============  
+
+
+Inequality Signs:
+  Equality and Inequality:
+     if (($# >= 3))
+     if [$# -gt 3]
+     if [$# -lt 3]
+     if (( $# == 3))
+-eq or == (x==y)
+-ne or != (x !=y)     
+
+Inequality signs :
+=================
+Equality and inequality:
+    -eq or == represent equals to 
+    ((x == y)) or [x -eq y]
+    -ne or != represent  not equals to 
+    ((x != y)) or [x -ne y]
+    -gt or >  represent greater than 
+    ((x > y)) or [x > y]
+    -lt or <  represent less than 
+    ((x < y)) or [x < y]
+    -ge or >= greater than or equals to 
+    -le or <= less than or equals to
+
+$#  $*/$@          $?  $$  $1       $2      $3      $n      $0
+ 3  iyanu,20,700           iyanu    20      700             vote
+
+vote.sh iyanu 20 700
+
+if (( $# == 3 ))
+    then
+    echo "You are authenticated"
+    echo $1 got `expr $2 \* $3`
+    else
+    echo "Please, run the script with 3 argument"
+    fi 
+
+Conditions:
+  if statement
+  Syntax:
+    if (( conditiond ))
+    then
+    commands
+    else 
+    commands 
+    fi
+
+    echo "How much are you willing to pay"
+    read price
+    if [ $price -ge 4000 ]
+    then
+    echo "your price is accepted"
+    else
+    echo "Sorry we can't accept your price"
+    fi
+
+
+access.sh
+    #!/bin/bash
+    # This script will authenticate bank user
+    echo "Good Afternoon"
+    echo "Please enter your name"
+    if (( $pin == 1991 ))
+    read name 
+    echo "$name, Welcome to Access Bank"
+    echo "Please enter your card"
+    sleep 10
+    echo "Please enter your pin"
+    read -s pin  # -s pass a secret variable
+    echo "You are authenticated."
+    echo "Thanks for banking with Access Bank"
+    else
+    echo "Sorry you have enter the wrong pin"
+    echo "Entering multiple wrong pin can block your account for your protection"
+    fi
+
+Debuging issues:
+  vim debug.sh
+  ==================
+  whoami
+  free -m
+  date 
+  pwd
+  whatis ls 
+  df -h
+  echo $?
+  echo $$
+
+  IQ: How do you troubbleshoot issues in scripting?
+      How do run run script in a debugging mode?
+  INPUT NAD OUTPUT REDIRECTIONS:
+    Standard output
+    Standard error 
+Redirect standard output ---:
+  sh debug.sh  > debug.txt 
+Redirect standard error ---:
+  Date 
+  free -m
+  Time 
+  USerdel Raph
+  echo "There is an error with your script" 
+
+  sh error.sh 
+  sh error.sh 1>errorfile: out of the error 
+  sh error.sh 2>errorfile: out of the successful command ran 
+
+Redirect standard output & error:
+  sh scriptName > errorfile
+
+using script for package management:
+We can install, remove, update and upgrade packages
+in our servers using scripting.
+
+Example of packages
+vim, tree, httpd, net-tools, 
+git, maven, tomcat, jenkins
+kubernetes, kubelet, docker
+sonarQube etc.....  
+
+using package manager like:
+yum/dnf  --------        centOs , Redhat
+apt/apt-get ------       ubuntu. debain
+chocolatey/choco ----    wiondow OS 
+brew   ------------      mac OS 
+RPM ---- Redhat
+pip ---- python
+helm -- kubernetes
+
+read = R  4
+Write = W 
+execute = X
+
+-rw-r--r--. 1 root root 14792 Mar  7 20:57  news-detail.html
+
+<h1>Welcome to SeariseTech</h1>
+<h2>Searistech is developing a software solution for Walmar</h2>
+<h3>We are here to learn HTML code @ Searistech</h3>
+<h4> Working on this projects are Engineer Calvin, Martins, Yinka, Cj, Iyanu, Stanley</h4>
+
+vi fileMGT.sh
+mkdir /var/www/html/calvin_web
+mkdir /var/www/html/martins_web
+mkdir /var/www/html/yinka_web
+mkdir /var/www/html/cj_wed
+mkdir /var/www/html/iyanu_web
+mkdir /var/www/html/stanley_web
+echo "<h1>Hello there, here is the list of walmart black friday sales</h1>" >/var/www/html/calvin_web/index.html
+echo <h1>Hello there, here is the new mercedes model we are workin on</h1> >/var/www/html/martins_web/index.html
+
+
+
+
+http://44.211.247.70/calvin_web/
+
+
+
+www.44.211.247.70/calvin_web
+
+BOA: www.100.124.168.235.com
+
+Domain Name Service = DNS
+We are creating DNS Record 
+A = Records
+PTR = Records
+CName = Records
+
+A Records:
+searisetech.net ---> 44.211.247.70
+PTR Records:
+44.211.247.70 ---> searisetech.net
+Cname Records 
+izu ----> Calvin
+
+AWS: ec2
+AWS: Route 53
+
+searisetech.net/calvin_web
+searisetech.net/martins_web
+
+
+=====================================
+Control Commands = Conditions:
+===================================  
+if statements:
+  Syntax:
+  if   [conditions] or (( conditions ))
+  commands
+  fi 
+
+Example:
+  echo "Please enter your ticket predition"
+  read ticket
+  if [ $ticket == 2741 ]
+  then
+  echo "you are a winner"
+  fi 
+
+usermgt
+
+
+filemgt 
+if [ -e /etc/passwd ]
+then
+echo "it exit. please proceed"
+grep calvin /etc/passwd
+touch software.sh /home/calvin
+else
+echo "it doesn't exit"
+fi 
+
+
+
+if else statements
+While loops
+for loops
+Funtions:
+  A funtion is a piece of code that performs
+  a specific task and avoids repetition/duplication
+
+Tickect007 Create a new user in your environment:
+
+funtion.sh
+usermgt(){
+  echo "Enter the username of the new user"
+  read name 
+  sudo adduser $name 
+}
+filemgt(){
+  if [ -e /etc/passwd ]
+then
+echo "it exit. please proceed"
+grep calvin /etc/passwd
+touch software.sh /home/calvin
+else
+echo "it doesn't exit"
+fi 
+}
+packagemt(){
+  sudo yum update -y 
+  sudo yum install git maven -y
+}
+db_backup(){
+  cp -R * /home/Martin
+}
+monitoring(){
+  df -h
+  free -m
+  top
+}
+
+
+
+date
+sudo ls /var/run/httpd/httpd.pid &> /dev/null
+if [ $? -eq 0 ]
+then
+echo "Httpd process is currently running."
+else
+echo "Httpd process is Not running."
+echo "Starting the process."
+sudo systemctl start httpd
+if [ $? -eq 0 ]
+then
+echo "Process started successfully."
+else
+echo "Process starting faild, contact the admin."
+fi
+fi
+echo "We are good to gooo"
+
+Sign up for gitHub Account:

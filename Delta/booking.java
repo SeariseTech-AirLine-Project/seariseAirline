@@ -1,1 +1,1 @@
-my long time goal is to a DevOps engr. --- Ceejay
+my long time goal is to become a DevOps engr. --- Ceejay
